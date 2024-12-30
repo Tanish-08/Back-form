@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Buddha University - Examination Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: purple;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section legend {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .form-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-remove-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            margin: 5px 0;
+        }
+
+        .add-remove-btn:hover {
+            background-color: #218838;
+        }
+
+        .remove-btn {
+            background-color: #dc3545;
+        }
+
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+
+        .serial-no {
+            text-align: center;
+        }
+
+        .form-section.hidden {
+            display: none;
+        }
+
+        .form-section fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .form-section fieldset legend {
+            font-size: 1.2rem;
+            color: #0056b3;
+            padding: 0 10px;
+        }
+
+        .form-section fieldset table {
+            width: 100%;
+        }
+
+        .form-section fieldset th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .form-section fieldset td {
+            padding: 5px;
+        }
+
+        .print-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .print-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="https://www.gbu.ac.in/GBU_VC/assets/GBU-Logo.jpg" alt="GBU Logo">
+            <h1>Gautam Buddha University</h1>
+            <h2>Form for Special Back Paper Examination/Repeat Examination</h2>
+        </div>
+
+        <form id="examForm">
+            <fieldset class="form-section">
+                <legend>Personal Information</legend>
+                <table>
+                    <tr>
+                        <th>School Of</th>
+                        <td>
+                            <select name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="University School of Management">University School of Management</option>
+                                <option value="University School of Biotechnology">University School of Biotechnology</option>
+                                <option value="University School of Information & communications technology">University School of Information & communications technology</option>
+                                <option value="University School of Engineering">University School of Engineering</option>
+                                <option value="University School of Humanities & Social Sciences">University School of Humanities & Social Sciences</option>
+                                <option value="University School of Vocational Studies & Applied Sciences">University School of Vocational Studies & Applied Sciences</option>
+                                <option value="University School of Law Justice & Governance">University School of Law Justice & Governance</option>
+                                <option value="University School of Buddhist Studies & Civilizations">University School of Buddhist Studies & Civilizations</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1. Name:</th>
+                        <td><input type="text" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <th>2. Father's Name:</th>
+                        <td><input type="text" name="father_name" required></td>
+                    </tr>
+                    <tr>
+                        <th>3. Enroll No./ roll no.:</th>
+                        <td><input type="text" name="enroll_no." required></td>
+                    </tr>
+                    <tr>
+                        <th>4. Programme Name:</th>
+                        <td><input type="text" name="program_name" required></td>
+                    </tr>
+                    <tr>
+                        <th>5. Current Semester & Batch:</th>
+                        <td><input type="text" name="semester_batch" required></td>
+                    </tr>
+                    <tr>
+                        <th>6. Email ID:</th>
+                        <td><input type="email" name="email" id="email" required></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Form Selection</legend>
+                <label for="backPaperCheckbox">Back Paper</label>
+                <input type="checkbox" id="backPaperCheckbox" name="formSection" value="back" onchange="toggleFormSection()" checked>
+                <label for="repeatCourseCheckbox">Repeat Course</label>
+                <input type="checkbox" id="repeatCourseCheckbox" name="formSection" value="repeat" onchange="toggleFormSection()">
+            </fieldset>
+
+            <fieldset id="back-paper-section" class="form-section">
+                <legend>a. Details of Back Paper</legend>
+                <table id="back-paper">
+                    <tr>
+                        <th class="serial-no">#</th>
+                        <th>Semester</th>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td class="serial-no">1</td>
+                        <td>
+                            <select name="back_semester[]" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="back_course_code[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                        <td><input type="text" name="back_course_name[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                        <td><button type="button" class="add-remove-btn remove-btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+                </table>
+                <button type="button" class="add-remove-btn" onclick="addRow('back-paper')">Add Row</button>
+            </fieldset>
+
+            <fieldset id="repeat-course-section" class="form-section hidden">
+                <legend>b. Details of Repeat Course</legend>
+                <table id="repeat-course">
+                    <tr>
+                        <th class="serial-no">#</th>
+                        <th>Semester</th>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td class="serial-no">1</td>
+                        <td>
+                            <select name="repeat_semester[]" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="repeat_course_code[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                        <td><input type="text" name="repeat_course_name[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                        <td><button type="button" class="add-remove-btn remove-btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+                </table>
+                <button type="button" class="add-remove-btn" onclick="addRow('repeat-course')">Add Row</button>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Fee Information</legend>
+                <table>
+                    <tr>
+                        <th>Fee Receipt No.:</th>
+                        <td><input type="number" name="fee_receipt_no" required></td>
+                    </tr>
+                    <tr>
+                        <th>Amount:</th>
+                        <td><input type="text" name="amount" required></td>
+                    </tr>
+                    <tr>
+                        <th>Upload Fee Receipt:</th>
+                        <td><input type="file" id="feeReceiptFile" name="fee_receipt_file" accept=".jpg, .jpeg, .png, .pdf" required></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Signature</legend>
+                <p>Date: <input type="date" name="date" required></p>
+                <p>Upload Signature of Student: <input type="file" name="student_signature" accept=".jpg, .jpeg, .png" required></p>
+            </fieldset>
+            <fieldset class="form-section">
+                <legend>Declaration</legend>
+                <label><input type="checkbox" name="declaration" required> I declare that the information provided is correct.</label>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="footer">
+            <p>Note: The copy of Back Paper/ Course Repeat Exam Fee Receipt should be enclosed with the Form.</p>
+            <a class="print-btn" href="javascript:window.print()">Print Form</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('examForm');
+        const feeReceiptFile = document.getElementById('feeReceiptFile');
+
+        function toggleFormSection() {
+            const backPaperCheckbox = document.getElementById('backPaperCheckbox').checked;
+            const repeatCourseCheckbox = document.getElementById('repeatCourseCheckbox').checked;
+            const backPaperSection = document.getElementById('back-paper-section');
+            const repeatCourseSection = document.getElementById('repeat-course-section');
+
+            backPaperSection.classList.toggle('hidden', !backPaperCheckbox);
+            repeatCourseSection.classList.toggle('hidden', !repeatCourseCheckbox);
+
+            resetSectionInputs(backPaperSection, !backPaperCheckbox);
+            resetSectionInputs(repeatCourseSection, !repeatCourseCheckbox);
+        }
+
+        function resetSectionInputs(section, hidden) {
+            const inputs = section.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.value = hidden ? '' : input.value;
+                input.setCustomValidity('');
+            });
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], input[type="file"], input[type="email"], input[type="number"], select');
+            inputs.forEach(input => {
+                if (input.value.trim() === "" && input.required) {
+                    input.setCustomValidity("This field is required.");
+                    isValid = false;
+                } else {
+                    input.setCustomValidity("");
+                }
+                input.reportValidity();
+            });
+
+            if (isValid) {
+                alert('You have successfully submitted the form!');
+                form.reset();
+                toggleFormSection(); // Reset form sections visibility
+            }
+        });
+
+        function addRow(tableId) {
+            const table = document.getElementById(tableId);
+            const rowCount = table.rows.length;
+            const row = table.insertRow(rowCount);
+            row.innerHTML = `<td class="serial-no">${rowCount}</td>
+                             <td>
+                                 <select name="${tableId === 'back-paper' ? 'back_semester[]' : 'repeat_semester[]'}" required>
+                                     <option value="">Select Semester</option>
+                                     <option value="1">1</option>
+                                     <option value="2">2</option>
+                                     <option value="3">3</option>
+                                     <option value="4">4</option>
+                                     <option value="5">5</option>
+                                     <option value="6">6</option>
+                                     <option value="7">7</option>
+                                     <option value="8">8</option>
+                                     <option value="9">9</option>
+                                     <option value="10">10</option>
+                                 </select>
+                             </td>
+                             <td><input type="text" name="${tableId === 'back-paper' ? 'back_course_code[]' : 'repeat_course_code[]'}" oninput="this.value = this.value.toUpperCase()" required></td>
+                             <td><input type="text" name="${tableId === 'back-paper' ? 'back_course_name[]' : 'repeat_course_name[]'}" oninput="this.value = this.value.toUpperCase()" required></td>
+                             <td><button type="button" class="add-remove-btn remove-btn" onclick="removeRow(this)">Remove</button></td>`;
+        }
+
+        function removeRow(button) {
+            const row = button.parentNode.parentNode;
+            const table = row.parentNode;
+            table.deleteRow(row.rowIndex);
+            updateSerialNumbers(table);
+        }
+
+        function updateSerialNumbers(table) {
+            for (let i = 1, row; row = table.rows[i]; i++) {
+                row.cells[0].innerText = i;
+            }
+        }
+
+        // Add event listener to the file input element
+        feeReceiptFile.addEventListener('change', () => {
+            const backPaperCheckbox = document.getElementById('backPaperCheckbox');
+            const repeatCourseCheckbox = document.getElementById('repeatCourseCheckbox');
+
+            // Automatically check the appropriate checkboxes
+            backPaperCheckbox.checked = true;
+            repeatCourseCheckbox.checked = false;
+
+            // Trigger the toggle to display the appropriate sections
+            toggleFormSection();
+        });
+
+        // Ensure the correct section is displayed on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleFormSection();
+        });
+    </script>
+</body></html>

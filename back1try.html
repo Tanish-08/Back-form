@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Special Back Paper Examination Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .signature {
+            margin-top: 20px;
+            border-top: 1px solid #000;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gautam Buddha University</h1>
+    <h2>Form for Special Back Paper Examination/Repeat Examination</h2>
+
+    <form>
+        <table id="student-info" class="table table-bordered">
+            <tr>
+                <th>School of:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>1. Name:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>2. Father's Name:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>3. Enroll No.:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>4. Programme Name:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>5. Current Semester & Batch:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>6. Fee Receipt No.:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>Amount:</th>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+        </table>
+
+        <h3>a. Details of Back Paper</h3>
+        <table id="back-paper" class="table table-bordered">
+            <tr>
+                <th>Semester</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type=" text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+        </table>
+
+        <h3>b. Details of Repeat Course</h3>
+        <table id="repeat-course" class="table table-bordered">
+            <tr>
+                <th>Semester</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+                <td><input type="text" class="form-control" required></td>
+            </tr>
+        </table>
+
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" required>
+        </div>
+
+        <div class="signature">
+            <p>Signature of Student: ____________________</p>
+        </div>
+
+        <div class="footer">
+            <p>Note: The copy of Back Paper/ Course Repeat Exam Fee Receipt should be enclosed with the Form.</p>
+            <p>Verified By:</p>
+            <p>(Dean/HoD)</p>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

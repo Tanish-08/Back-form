@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.header h1 {
+    margin: 0;
+    color: purple;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section legend {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.form-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.add-remove-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 5px 0;
+}
+
+.add-remove-btn:hover {
+    background-color: #218838;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.serial-no {
+    text-align: center;
+}
+
+.form-section.hidden {
+    display: none;
+}
+
+.form-section fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form-section fieldset legend {
+    font-size: 1.2rem;
+    color: #0056b3;
+    padding: 0 10px;
+}
+
+.form-section fieldset table {
+    width: 100%;
+}
+
+.form-section fieldset th {
+    background-color: #0056b3;
+    color: white;
+}
+
+.form-section fieldset td {
+    padding: 5px;
+}

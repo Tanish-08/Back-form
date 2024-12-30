@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Buddha University - Examination Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: purple;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section legend {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .form-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-remove-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            margin: 5px 0;
+        }
+
+        .add-remove-btn:hover {
+            background-color: #218838;
+        }
+
+        .remove-btn {
+            background-color: #dc3545;
+        }
+
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+
+        .serial-no {
+            text-align: center;
+        }
+
+        .form-section.hidden {
+            display: none;
+        }
+
+        .form-section fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .form-section fieldset legend {
+            font-size: 1.2rem;
+            color: #0056b3;
+            padding: 0 10px;
+        }
+
+        .form-section fieldset table {
+            width: 100%;
+        }
+
+        .form-section fieldset th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .form-section fieldset td {
+            padding: 5px;
+        }
+
+        .print-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .print-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="https://www.gbu.ac.in/GBU_VC/assets/GBU-Logo.jpg" alt="GBU Logo">
+            <h1>Gautam Buddha University</h1>
+            <h2>School of Information and Communication Technology</h2>
+            <h3>Form for Special Back Paper Examination/Repeat Examination</h3>
+        </div>
+
+        <form id="examForm">
+            <fieldset class="form-section">
+                <legend>Fee Information</legend>
+                <table>
+                    <tr>
+                        <th>Fee Receipt No.:</th>
+                        <td><input type="number" name="fee_receipt_no" required></td>
+                    </tr>
+                    <tr>
+                        <th>Amount:</th>
+                        <td><input type="text" name="amount" required></td>
+                    </tr>
+                    <tr>
+                        <th>Upload Fee Receipt:</th>
+                        <td><input type="file" id="feeReceiptFile" name="fee_receipt_file" accept=".jpg, .jpeg, .png, .pdf" required></td>
+                    </tr>
+                </table>
+                <div id="feeSummary">
+                    <p><strong>Total Courses:</strong> <span id="totalCourses">0</span></p>
+                    <p><strong>Total Fee:</strong> ₹<span id="totalFee">0</span></p>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+       
+
+        document.getElementById('examForm').addEv function updateFeeSummary() {
+            const backTable = document.getElementById('back-paper');
+            const repeatTable = document.getElementById('repeat-course');
+
+            const backRows = backTable ? backTable.rows.length - 1 : 0; // Exclude header row
+            const repeatRows = repeatTable ? repeatTable.rows.length - 1 : 0; // Exclude header row
+
+            const totalCourses = backRows + repeatRows;
+            const totalFee = totalCourses * 1500;
+
+            document.getElementById('totalCourses').textContent = totalCourses;
+            document.getElementById('totalFee').textContent = totalFee;
+        }entListener('input', updateFeeSummary);
+
+        function addRow(tableId) {
+            const table = document.getElementById(tableId);
+            const rowCount = table.rows.length;
+            const row = table.insertRow(rowCount);
+            row.innerHTML = `<td class="serial-no">${rowCount}</td>
+                             <td>
+                                 <select name="${tableId === 'back-paper' ? 'back_semester[]' : 'repeat_semester[]'}" required>
+                                     <option value="">Select Semester</option>
+                                     <option value="1">1</option>
+                                     <option value="2">2</option>
+                                     <option value="3">3</option>
+                                     <option value="4">4</option>
+                                     <option value="5">5</option>
+                                     <option value="6">6</option>
+                                     <option value="7">7</option>
+                                     <option value="8">8</option>
+                                     <option value="9">9</option>
+                                     <option value="10">10</option>
+                                 </select>
+                             </td>
+                             <td><input type="text" name="${tableId === 'back-paper' ? 'back_course_code[]' : 'repeat_course_code[]'}" oninput="this.value = this.value.toUpperCase()" required></td>
+                             <td><input type="text" name="${tableId === 'back-paper' ? 'back_course_name[]' : 'repeat_course_name[]'}
+[]" required></td>
+                             <td><button type="button" class="add-remove-btn remove-btn" onclick="removeRow(this)">Remove</button></td>`;
+            updateFeeSummary();
+        }
+
+        function removeRow(button) {
+            const row = button.closest('tr');
+            row.parentNode.removeChild(row);
+            updateFeeSummary();
+        }
+    </script>
+</body>
+
+</html>
